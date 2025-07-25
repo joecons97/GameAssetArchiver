@@ -10,11 +10,11 @@ public class Program
     {
         if (args.Length == 0)
         {
-            Console.WriteLine("Usage: GameAssetArchive assets_dir=<path_to_assets_to_archive> output=<path_to_archive_output_file>");
+            Console.WriteLine("Usage: GameAssetArchiver assets_dir=<path_to_assets_to_archive> output=<path_to_archive_output_file>");
             Console.WriteLine("OR");
-            Console.WriteLine("Usage: GameAssetArchive command_file=<path_to_archive_command_file>");
+            Console.WriteLine("Usage: GameAssetArchiver command_file=<path_to_archive_command_file>");
             Console.WriteLine("OR");
-            Console.WriteLine("Usage: GameAssetArchive dump_toc=<path_to_archive_file>");
+            Console.WriteLine("Usage: GameAssetArchiver dump_toc=<path_to_archive_file>");
             return;
         }
 

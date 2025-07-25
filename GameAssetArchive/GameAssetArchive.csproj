@@ -11,7 +11,16 @@
     <Authors>Josephus</Authors>
     <PackAsTool>True</PackAsTool>
     <ToolCommandName>GameAssetArchiver</ToolCommandName>
+    <RepositoryUrl>https://github.com/joecons97/GameAssetArchiver</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\GameAssetArchive.Core\GameAssetArchive.Core.csproj" />
