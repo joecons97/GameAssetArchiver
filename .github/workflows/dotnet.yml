@@ -24,3 +24,10 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
+    - name: publish on version change
+      id: publish_nuget
+      uses: brandedoutcast/publish-nuget@v2
+      with:
+        PROJECT_FILE_PATH: GameAssetArchive/GameAssetArchive.csproj
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+        VERSION_REGEX: ^\s*<Version>(.*)<\/Version>$
