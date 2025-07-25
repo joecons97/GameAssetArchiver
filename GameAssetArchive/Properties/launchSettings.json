@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "GameAssetArchive": {
+      "commandName": "Project",
+      "commandLineArgs": "assets_dir=\"C:\\Users\\joeco\\source\\repos\\NovaBlock\\GlClient\\Content\" output=\"C:\\Users\\joeco\\source\\repos\\NovaBlock\\GlClient\\arch\""
+    }
+  }
+}

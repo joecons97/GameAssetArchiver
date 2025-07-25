@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36221.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameAssetArchive.Core", "GameAssetArchive.Core\GameAssetArchive.Core.csproj", "{F0EE024D-1F3E-4228-8581-3F842A316B1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameAssetArchive", "GameAssetArchive\GameAssetArchive.csproj", "{6746A0C2-E532-4D0F-85A7-FCEB30593DAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0EE024D-1F3E-4228-8581-3F842A316B1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0EE024D-1F3E-4228-8581-3F842A316B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0EE024D-1F3E-4228-8581-3F842A316B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0EE024D-1F3E-4228-8581-3F842A316B1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6746A0C2-E532-4D0F-85A7-FCEB30593DAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6746A0C2-E532-4D0F-85A7-FCEB30593DAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6746A0C2-E532-4D0F-85A7-FCEB30593DAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6746A0C2-E532-4D0F-85A7-FCEB30593DAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA258AE5-A136-431F-8E28-FA5DBF21B437}
+	EndGlobalSection
+EndGlobal
