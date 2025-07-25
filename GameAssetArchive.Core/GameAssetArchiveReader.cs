@@ -1,10 +1,8 @@
 ﻿using Force.Crc32;
 using GameAssetArchive.Core.Enums;
 using GameAssetArchive.Core.Models;
-using System.Diagnostics.CodeAnalysis;
 using System.IO.Compression;
 using System.Text;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace GameAssetArchive.Core;
 
@@ -23,6 +21,8 @@ public class GameAssetArchiveReader : IDisposable
     private Dictionary<string, BuildStoreFile> fileOffsets = new Dictionary<string, BuildStoreFile>();
 
     private FileStream? stream;
+
+    public IReadOnlyDictionary<string, BuildStoreFile> TableOfContents => fileOffsets;
 
     public async Task ReadFromAsync(string filePath)
         => await ReadFromAsync(new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.Read));
@@ -54,7 +54,7 @@ public class GameAssetArchiveReader : IDisposable
 
     public async Task<Stream?> TryGetFileStreamAsync(string filePath)
     {
-        if(stream == null)
+        if (stream == null)
         {
             throw new InvalidOperationException("Archive has not been opened. Call ReadFromAsync first.");
         }
@@ -67,7 +67,7 @@ public class GameAssetArchiveReader : IDisposable
         stream.Seek(file.offset + assetDataStartOffset, SeekOrigin.Begin);
         var compressedData = new byte[file.size];
         var readBytes = await stream.ReadAsync(compressedData, 0, (int)file.size);
-        if(readBytes != file.size)
+        if (readBytes != file.size)
         {
             throw new InvalidDataException($"Failed to read the expected number of bytes for file '{filePath}'. Expected: {file.size}, Read: {readBytes}");
         }

@@ -8,4 +8,4 @@ internal record BuildStoreResult(MemoryStream Stream, List<KeyValuePair<string, 
     }
 }
 
-internal record BuildStoreFile(long offset, long size);
+public record BuildStoreFile(long offset, long size);

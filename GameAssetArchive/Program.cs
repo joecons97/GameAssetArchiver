@@ -13,6 +13,8 @@ public class Program
             Console.WriteLine("Usage: GameAssetArchive assets_dir=<path_to_assets_to_archive> output=<path_to_archive_output_file>");
             Console.WriteLine("OR");
             Console.WriteLine("Usage: GameAssetArchive command_file=<path_to_archive_command_file>");
+            Console.WriteLine("OR");
+            Console.WriteLine("Usage: GameAssetArchive dump_toc=<path_to_archive_file>");
             return;
         }
 
@@ -49,6 +51,15 @@ public class Program
         else if(parameters.TryGetValue("command_file", out var commandFilePath) && !string.IsNullOrEmpty(commandFilePath))
         {
 
+        }
+        else if(parameters.TryGetValue("dump_toc", out var dumpTocPath) && !string.IsNullOrEmpty(dumpTocPath))
+        {
+            using var reader = new GameAssetArchiveReader();
+            await reader.ReadFromAsync(dumpTocPath);
+            foreach (var entry in reader.TableOfContents)
+            {
+                Console.WriteLine($"File: {entry.Key}, Size: {entry.Value.size}bytes");
+            }
         }
         else
         {
