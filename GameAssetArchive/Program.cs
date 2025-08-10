@@ -1,6 +1,8 @@
 ﻿using GameAssetArchive.Core;
+using GameAssetArchive.Core.Dtos;
 using GameAssetArchive.Core.Enums;
 using System.IO.Compression;
+using System.Text.Json;
 
 namespace GameAssetArchive;
 
@@ -25,41 +27,15 @@ public class Program
         if (parameters.TryGetValue("assets_dir", out var assetsDir) && !string.IsNullOrEmpty(assetsDir)
             && parameters.TryGetValue("output", out var output) && !string.IsNullOrEmpty(output))
         {
-            if (!Directory.Exists(assetsDir))
-            {
-                Console.WriteLine($"The specified path does not exist: {assetsDir}");
-                return;
-            }
-
-            if(File.Exists(output))
-            {
-                Console.WriteLine($"The output file already exists: {output}");
-                return;
-            }
-
-            try
-            {
-                var writer = new GameAssetArchiveWriter(new Core.Models.CompressionOptions(CompressionType.GZip, CompressionLevel.Fastest));
-                await writer.ArchiveGameAssetsAsync(assetsDir, output);
-                Console.WriteLine($"Game assets archived successfully to: {output}");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"An error occurred while archiving game assets: {ex.Message}");
-            }
+            await Commands.BuildFromAssetDirectoryAsync(assetsDir, output);
         }
         else if(parameters.TryGetValue("command_file", out var commandFilePath) && !string.IsNullOrEmpty(commandFilePath))
         {
-
+            await Commands.BuildFromCommandFile(commandFilePath);
         }
         else if(parameters.TryGetValue("dump_toc", out var dumpTocPath) && !string.IsNullOrEmpty(dumpTocPath))
         {
-            using var reader = new GameAssetArchiveReader();
-            await reader.ReadFromAsync(dumpTocPath);
-            foreach (var entry in reader.TableOfContents)
-            {
-                Console.WriteLine($"File: {entry.Key}, Size: {entry.Value.size}bytes");
-            }
+            await Commands.DumpTableOfContents(dumpTocPath);
         }
         else
         {

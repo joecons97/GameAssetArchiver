@@ -9,3 +9,29 @@ Example usage
 
 You can also dump a list of files for a given archive file
 `GameAssetArchiver dump_toc=<path_to_archive_file>`
+
+## Command Files
+Archives can also be built using `command files`. These are json files that can define multiple archives.
+For example:
+``
+{
+    "archives":[
+        {
+            "outputPath": "Graphics",
+            "inputPaths":[
+                "Art\\",
+                "Shaders\\"
+            ]
+        },
+        {
+            "outputPath": "BlockData",
+            "inputPaths":[
+                "Blocks\\"
+            ]
+        }
+    ]
+}
+``
+Will create two archives in the same directory as the command file:
+1. Graphics - containing all files within the art and shaders folder.
+2. BlockData - containing all files within the blocks folder. 

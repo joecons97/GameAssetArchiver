@@ -2,7 +2,7 @@
   "profiles": {
     "GameAssetArchive": {
       "commandName": "Project",
-      "commandLineArgs": "assets_dir=\"C:\\Users\\joeco\\source\\repos\\NovaBlock\\GlClient\\Content\" output=\"C:\\Users\\joeco\\source\\repos\\NovaBlock\\GlClient\\arch\""
+      "commandLineArgs": "command_file=\"C:\\Users\\joeco\\source\\repos\\NovaBlock\\NovaBlock.Client\\Content\\archive_command_file.json\""
     }
   }
 }
