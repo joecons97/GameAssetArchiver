@@ -1,4 +1,6 @@
 # GameAssetArchive
+Install via nuget: `https://www.nuget.org/packages/GameAssetArchive`
+
 An open-source game asset archiving system used for packages assets into a single `.gaarc` file.
 
 For example, you might have one `.gaarc` file per level or you could split up levels into different `.gaarc` files and stream in data as the player goes through the level, etc.
