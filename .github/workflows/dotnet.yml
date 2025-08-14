@@ -27,6 +27,6 @@ jobs:
     - name: Package Tool
       run: dotnet pack -c Release -o . GameAssetArchive/GameAssetArchive.csproj
     - name: Package Library
-      run: dotnet pack -c Release -o . GameAssetArchive/GameAssetArchive.Core.csproj
+      run: dotnet pack -c Release -o . GameAssetArchive.Core/GameAssetArchive.Core.csproj
     - name: Publish All
       run: dotnet nuget push *.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
