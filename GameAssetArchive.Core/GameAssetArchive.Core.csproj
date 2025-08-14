@@ -4,6 +4,13 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>$(AssemblyName)</PackageId>
+    <Title>Game Asset Archiver</Title>
+    <Authors>Josephus</Authors>
+    <RepositoryUrl>https://github.com/joecons97/GameAssetArchiver</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Version>1.0.4</Version>
   </PropertyGroup>
 
   <ItemGroup>

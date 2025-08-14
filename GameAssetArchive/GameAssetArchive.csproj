@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>$(AssemblyName)</PackageId>
-    <Title>Game Asset Archiver</Title>
+    <Title>Game Asset Archiver Tool</Title>
     <Authors>Josephus</Authors>
     <PackAsTool>True</PackAsTool>
     <ToolCommandName>GameAssetArchiver</ToolCommandName>

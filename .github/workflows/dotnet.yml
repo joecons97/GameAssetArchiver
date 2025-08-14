@@ -24,7 +24,9 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build -c Release --no-restore
-    - name: Package
+    - name: Package Tool
       run: dotnet pack -c Release -o . GameAssetArchive/GameAssetArchive.csproj
-    - name: Publish
+    - name: Package Library
+      run: dotnet pack -c Release -o . GameAssetArchive/GameAssetArchive.Core.csproj
+    - name: Publish All
       run: dotnet nuget push *.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
