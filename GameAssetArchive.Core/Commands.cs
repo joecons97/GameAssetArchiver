@@ -57,7 +57,7 @@ public static class Commands
                 {
                     try
                     {
-                        return Directory.GetFiles(new Uri(Path.Combine(workingDirectory, x)).LocalPath, "*.*", SearchOption.AllDirectories);
+                        return Directory.GetFiles(Path.GetFullPath(Path.Combine(workingDirectory, x)), "*.*", SearchOption.AllDirectories);
                     }
                     catch(Exception ex)
                     {
