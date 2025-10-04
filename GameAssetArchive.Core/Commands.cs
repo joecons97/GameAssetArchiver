@@ -1,5 +1,6 @@
 ﻿using GameAssetArchive.Core.Dtos;
 using GameAssetArchive.Core.Enums;
+using System.IO;
 using System.IO.Compression;
 using System.Text.Json;
 
@@ -57,7 +58,9 @@ public static class Commands
                 {
                     try
                     {
-                        return Directory.GetFiles(Path.GetFullPath(Path.Combine(workingDirectory, x)), "*.*", SearchOption.AllDirectories);
+                        var combined = Path.Combine(workingDirectory, x);
+                        var normalized = Path.GetFullPath(combined.Replace('\\', Path.DirectorySeparatorChar));
+                        return Directory.GetFiles(normalized, "*.*", SearchOption.AllDirectories);
                     }
                     catch(Exception ex)
                     {
