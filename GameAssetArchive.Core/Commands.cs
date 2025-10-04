@@ -53,13 +53,19 @@ public static class Commands
 
         foreach (var archive in dto.Archives)
         {
+            Console.WriteLine("Gathering files for archive: " + archive.OutputPath);
             var allDirectories = archive.InputPaths
                 .SelectMany(x =>
                 {
                     try
                     {
+                        Console.WriteLine("Searching: " + x);
                         var combined = Path.Combine(workingDirectory, x);
                         var normalized = Path.GetFullPath(combined.Replace('\\', Path.DirectorySeparatorChar));
+
+                        if(Path.HasExtension(normalized) == false && normalized.EndsWith(Path.DirectorySeparatorChar) == false)
+                            normalized += Path.DirectorySeparatorChar;
+
                         return Directory.GetFiles(normalized, "*.*", SearchOption.AllDirectories);
                     }
                     catch(Exception ex)
