@@ -53,7 +53,19 @@ public static class Commands
         foreach (var archive in dto.Archives)
         {
             var allDirectories = archive.InputPaths
-                .SelectMany(x => Directory.GetFiles(Path.Combine(workingDirectory, x), "*.*", SearchOption.AllDirectories))
+                .SelectMany(x =>
+                {
+                    try
+                    {
+                        return Directory.GetFiles(new Uri(Path.Combine(workingDirectory, x)).LocalPath, "*.*", SearchOption.AllDirectories);
+                    }
+                    catch(Exception ex)
+                    {
+                        Console.WriteLine("An error occurred while trying to find files in path: " + x);
+                        Console.WriteLine(ex);
+                        return [];
+                    }
+                })
                 .ToArray();
 
             var writer = new GameAssetArchiveWriter(new Core.Models.CompressionOptions(CompressionType.GZip, CompressionLevel.Fastest));
