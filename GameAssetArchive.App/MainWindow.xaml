@@ -1,0 +1,29 @@
+﻿<Window x:Class="GameAssetArchive.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GameAssetArchive.App"
+        mc:Ignorable="d"
+        Title="Game Asset Archiver" Height="450" Width="800">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Open" Click="FileOpen_MenuItem_Click"/>
+            </MenuItem>
+        </Menu>
+        <DockPanel>
+            <DockPanel DockPanel.Dock="Left" Width="196">
+                <TreeView Name="FolderStructureTreeView" SelectedItemChanged="FolderStructureTreeView_SelectedItemChanged">
+
+                </TreeView>
+            </DockPanel>
+            <DockPanel DockPanel.Dock="Right">
+                <ListView Name="ActiveDirectoryList" MouseDoubleClick="ActiveDirectoryList_MouseDoubleClick" MouseRightButtonUp="ActiveDirectoryList_MouseRightButtonUp">
+
+                </ListView>
+            </DockPanel>
+        </DockPanel>
+    </DockPanel>
+</Window>
+

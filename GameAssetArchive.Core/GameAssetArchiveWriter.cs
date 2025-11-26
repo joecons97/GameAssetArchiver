@@ -2,7 +2,6 @@
 using GameAssetArchive.Core.Models;
 using System.IO.Compression;
 using System.Text;
-using System.Xml.Linq;
 
 namespace GameAssetArchive.Core;
 
@@ -138,7 +137,7 @@ public class GameAssetArchiveWriter
 
         await compressor.FlushAsync();
 
-        return new (crc, new MemoryStream(compressed.ToArray()));
+        return new(crc, new MemoryStream(compressed.ToArray()));
     }
 
     private static Stream GetCompressionStream(Stream stream, CompressionOptions options, bool leaveOpen)

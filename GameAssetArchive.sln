@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.14.36221.1
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.11222.15 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameAssetArchive.Core", "GameAssetArchive.Core\GameAssetArchive.Core.csproj", "{F0EE024D-1F3E-4228-8581-3F842A316B1A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameAssetArchive", "GameAssetArchive\GameAssetArchive.csproj", "{6746A0C2-E532-4D0F-85A7-FCEB30593DAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameAssetArchive.App", "GameAssetArchive.App\GameAssetArchive.App.csproj", "{FA353971-6D4A-44D4-87F1-9BBD54ECAFE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{6746A0C2-E532-4D0F-85A7-FCEB30593DAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6746A0C2-E532-4D0F-85A7-FCEB30593DAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6746A0C2-E532-4D0F-85A7-FCEB30593DAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA353971-6D4A-44D4-87F1-9BBD54ECAFE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA353971-6D4A-44D4-87F1-9BBD54ECAFE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA353971-6D4A-44D4-87F1-9BBD54ECAFE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA353971-6D4A-44D4-87F1-9BBD54ECAFE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
