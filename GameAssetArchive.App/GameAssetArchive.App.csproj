@@ -2,15 +2,15 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net10.0-windows7.0</TargetFramework>
+    <TargetFramework>net9.0-windows7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
-    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <ApplicationIcon>5f086810-543d-45f4-ac5e-a9ef2ee62a3f (1) (1) (1).ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="favicon.ico" />
+    <Content Include="5f086810-543d-45f4-ac5e-a9ef2ee62a3f (1) (1) (1).ico" />
   </ItemGroup>
 
   <ItemGroup>
