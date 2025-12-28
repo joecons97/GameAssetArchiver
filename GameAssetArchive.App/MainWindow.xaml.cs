@@ -14,6 +14,19 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+
+        var args = Environment.GetCommandLineArgs();
+        ;if (args.Length > 1)
+        {
+            var path = args[1];
+            if (File.Exists(path))
+            {
+                activeArchive = new GameAssetArchiveReader();
+                activeArchive.ReadFromAsync(path).GetAwaiter().GetResult();
+                PopulateFolderTree(FolderStructureTreeView, activeArchive.TableOfContents.Select(x => x.Key));
+                UpdateActiveDirectoryList("");
+            }
+        }
     }
 
     private async void FileOpen_MenuItem_Click(object sender, RoutedEventArgs e)
